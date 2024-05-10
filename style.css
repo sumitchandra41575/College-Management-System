@@ -473,11 +473,8 @@ footer{
    border-radius: 50px;
    width: 45px;
    padding: 10px;
-   position: fixed;
-   left: 1270px;
    cursor: pointer;
    z-index: 100000;
-   top: 580px;
    /* background-position: bottom right; */
 }
 .scroll_top a{
