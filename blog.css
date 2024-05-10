@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang=”en”>
+  <head>
+    <meta charset=”UTF-8”>
+   <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    <title>User Registration</title>
+     <style>
+    Body {
+      Font-family: Arial, sans-serif;
+      Max-width: 400px;
+      Margin: 20px auto; 
+}
+    Label {
+      Display: block;
+      Margin-bottom: 8px; 
+}
+    Input {
+      Width: 100%;
+      Padding: 8px;
+      Margin-bottom: 16px;
+      Box-sizing: border-box;
+ }
+    Button {
+      Width: 100%;
+      Padding: 10px 15px;
+      Background-color: #4CAF50;
+      Color: white;
+      Border: none;
+      Border-radius: 4px;
+      Cursor: pointer;
+ }
+      Button:hover {
+      Background-color: #45a049; 
+}
+  </style>
+</head>
+<body>
+  <form id=”registrationForm”>
+    First Name:
+    <input type=”text” id=”firstName” name=”firstName” placeholder=”John” required>
+   Last Name:
+    <input type=”text” id=”lastName” name=”lastName” placeholder=”Doe” required>
+    Email Address:
+    <input type=”email” id=”email” name=”email” placeholder=john.doe@example.com required>
+    Password (min. 8 characters):
+    <input type=”password” id=”password” name=”password” minlength=”8” required>
+    <button type=”submit”>Register</button>
+  </form>
+  <script>
+Var passwordInput = document.getElementById(‘password’);
+passwordInput.addEventListener(‘input’, function () {
+  var password = this.value;
+  var validityMessage = ‘’;
+  If (!password.match(/[a-z]+/)) {
+    validityMessage += ‘Include lowercase letters. ‘; 
+ }
+  If (!password.match(/[A-Z]+/)) {
+    validityMessage += ‘Include uppercase letters. ‘;
+  }
+  If (!password.match(/[0-9]+/)) {
+    validityMessage += ‘Include numbers. ‘;
+}
+  If (password.length < 8) {
+validityMessage += ‘Password must be at least 8 characters long. ‘;
+}
+  This.setCustomValidity(validityMessage);
+});
+
+passwordInput.addEventListener(‘keydown’, function () {
+  this.setCustomValidity(‘’);
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body{
+            background-image: linear-gradient(225deg,#125875,#ff7350);
+        }
+        h2{
+            color: rgb(255, 255, 255);
+            font-size: 35px;
+          }
+          input{
+            border-radius: 7px;
+            width: 400px;
+            height: 30px;
+           
+        }
+        .link{
+            margin-top: 20px;
+          margin-left: 105px;
+          display: flex;
+          padding-left: 10px;
+            }
+            a{
+            margin-left: 60px;
+            text-decoration: none;
+            background-image: linear-gradient(135deg,rgb(139, 201, 209),rgba(178, 210, 103, 0.703));
+            color: rgb(224, 241, 236);
+            border-radius: 5px;
+            
+            }
+            span{
+            border: 2px solid;
+            border-radius: 15px;
+            cursor: pointer;
+         }
+         img{
+            border-radius: 15px;
+        }
+            iframe{
+            border-radius: 15px;
+        }
+        a:hover{
+            background-color: black;
+            color: rgb(2, 37, 68);
+            z-index: 1;
+         }
+        span{
+            border: 2px solid;
+            border-radius: 15px;
+            cursor: pointer;
+         }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s ease; /* Add transition effect for background color change */
+        }
+
+        #gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s ease; /* Add transition effect for background color change */
+        }
+
+        #lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 25px #000;
+        }
+
+        #close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Gallery</h2>
+<div id="gallery">
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.Dt4z4HJZjssD-j68cenADAHaE8&pid=Api&P=0&h=180" alt=""height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.PXXIsXMetFzG9ChSr-fxGAHaD-&pid=Api&P=0&h=180" alt="" height="64px" width="94px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.J1ixYsBjShvo0nYagPv3fwHaEV&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.g3NaHwK6mcOUOfJ3IzFoNAHaEK&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.cZrF_JWpIsBAzPMps_a_SQHaC3&pid=Api&P=0&h=180" alt=""
+        height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.-3St1rmdjfiPGDRQF9zmUgHaB2&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.txXQZjgp43_ZFCAS_rfKNgHaEO&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.huT4uX3i_k6oPv0ZQd_KNwHaEK&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.2bQ19v6AyeGYg8SjLTNNpwHaEo&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.FWxYi06_w1Pj-rSy906DkgAAAA&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.BuUEjqg3zI7P5C7vHS-itQHaEC&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+    </div>
+    <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.5dxFNsP-JIkbDOu-R4AvuwHaE8&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.DGL7gJ_sAV-vnLJLpphlYAHaEo&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.PXXIsXMetFzG9ChSr-fxGAHaD-&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.f9pvwrh4d8aq9rmKopwlZgHaFm&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+        </div>
+        <div class="gallery-item" onclick="openLightbox('img2.jpg')">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.SdCYcWMmgMwEPjBa5Jxh2AHaFS&pid=Api&P=0&h=180" alt="" height="64px" width="64px">
+        </div>
+    </div>
+
+</div>
+
+<div id="lightbox">
+    <span id="close-btn" onclick="closeLightbox">×</span>
+    <img id="lightbox-img">
+</div>
+
+<script>
+    function openLightbox(imagePath) {
+        document.getElementById('lightbox-img').src = imagePath;
+        document.getElementById('lightbox').style.display = 'flex';
+        document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'; // Change background color when lightbox opens
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.backgroundColor = '#f4f4f4'; // Change back to the original background color when lightbox closes
+    }
+</script>
+
+</body>
+</html>
